@@ -5,7 +5,7 @@
 }
 
 body {
-    background: url('/assets/img/trenitalia_hero_2x.jpg') no-repeat center center fixed;
+    background-image: url('/assets/img/trenitalia_hero_2x.jpg');
     background-size: cover;
 }
 
@@ -23,15 +23,21 @@ body {
     background: rgba(164, 174, 175, 0.7);
     border: 5px solid darkgreen;
     border-radius: 20px;
-    box-shadow: 50px 50px 50px black;
+    box-shadow: 30px 50px 100px black;
     padding: 20px;
     text-align: center;
+}
+
+.message:hover {
+    transform: scale(1.5);
+    background: rgb(164, 174, 175);
+    cursor: pointer;
 }
 
 h1 {
     text-transform: uppercase;
     padding-top: 5px;
-    text-shadow: 0 0 3px white;
+    text-shadow: 0 0 3px darkgreen;
 } 
 
 h2 {
