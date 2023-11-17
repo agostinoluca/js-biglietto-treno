@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    background: url('/assets/img/trenitalia_hero_2x.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100vh;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.message {
+    background: rgba(164, 174, 175, 0.7);
+    border: 5px solid darkgreen;
+    border-radius: 20px;
+    box-shadow: 50px 50px 50px black;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    padding-top: 5px;
+    text-shadow: 0 0 3px white;
+} 
+
+h2 {
+    color: darkgreen;
+    text-shadow: 1px 1px 1px black;
+}
