@@ -25,25 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // chiediamo all'utente quanti km vuole percorrere e quanti anni ha.
     const kmViaggio = prompt ('Ciao! Quanti KM vuoi percorrere?');
-    const etàUtente = prompt ('Inserisci qui la tua età per definire il costo del biglietto.');
+    const etaUtente = prompt ('Inserisci qui la tua età per definire il costo del biglietto.');
 
-    // calcoliamo il prezzo totale del viaggio
-    const kmPrice = 0.21;
-    let ticketPrice = 0.21 * kmViaggio;
+    // chiediamo all'utente di inserire solamente valori numerici
+    if (isNaN(kmViaggio) || isNaN(etaUtente)) {
+        alert('ERRORE. Per favore, inserisci solo valori numerici.');
+    } else {
 
-    // calcoliamo gli sconti
-    if (etàUtente < 18) {
-        ticketPrice *= 0.8;
-        // sconto minorenni
-    } else if (etàUtente > 65) {
-        ticketPrice *= 0.6;
-        // sconto over 65
+        // calcoliamo il prezzo totale del viaggio
+        const kmPrice = 0.21;
+        let ticketPrice = 0.21 * kmViaggio;
+
+        // calcoliamo gli sconti
+        if (etaUtente < 18) { // sconto minorenni
+            ticketPrice *= 0.8;    
+        } else if (etaUtente > 65) { // sconto over 65
+            ticketPrice *= 0.6;    
+        }
+
+        // approssimiamo il risultato a due cifre decimali
+        ticketPrice = ticketPrice.toFixed(2);
+
+        // stampiamo in pagina il prezzo finale del biglietto
+        document.getElementById('ticket_price').innerHTML = `Il prezzo del biglietto è di € ${ticketPrice}`;
     }
-
-    // approssimiamo il risultato a due cifre decimali
-    ticketPrice = ticketPrice.toFixed(2);
-
-    // stampiamo in pagina il prezzo finale del biglietto
-    document.getElementById('ticket_price').innerHTML = `Il prezzo del biglietto è di € ${ticketPrice}`;
-
 });
